@@ -1,5 +1,44 @@
+let dataprev=null;
+
+
+      //fetching current data from database
+      async function datafetch(url1){
+          try {
+              const response = await fetch(url1, {
+                  method: 'GET',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+              });
+          
+              if (!response.ok) {
+                  const errorText = await response.text();
+                  throw new Error(`HTTP error! Status: ${response.status}, Details: ${errorText}`);
+              }
+              const datathis=await response.json();
+              //console.log(datathis);
+             console.log("helolo")
+               dataprev =datathis["DataOF"];
+               updateMemberData(
+                dataprev,
+      
+                "https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate"
+              );
+              console.log(dataprev);
+              
+          }
+          catch (error) {
+              alert("Cant connect to Database please Reload :)");
+          }
+      }
+
+
+    
+
 const button = document.getElementById("reset");
       button.addEventListener("click", reset);
+      const butt2=document.getElementById("undo");
+      butt2.addEventListener("click", undo);
       async function updateMemberData(newdata, urlu) {
         const url = urlu;
         const payload = {
@@ -26,7 +65,7 @@ const button = document.getElementById("reset");
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          alert("data reseted");
+          alert("data updated");
           location.replace("https://anjithsaju.github.io/");
         } catch (error) {
           console.error("Error:", error);
@@ -110,10 +149,12 @@ const button = document.getElementById("reset");
 
           };
           //datapush(database1,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/memeberdatapush");
+          updateMemberData(database1,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
           updateMemberData(
             database1,
             "https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate"
           );
+          
           const deleteAllMembers = async () => {
             const url =
               "https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/transactiondelete";
@@ -141,5 +182,14 @@ const button = document.getElementById("reset");
          // location.replace("https://anjithsaju.github.io/");
         } else alert("wrong password");
       }
-
-    
+      function undo()
+      {
+        const pass = document.getElementById("password").value;
+        if (pass == "yessekke")
+          {
+        datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/undo");
+       
+       
+      }
+    }
+      
