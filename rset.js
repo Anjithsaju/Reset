@@ -66,7 +66,7 @@ const button = document.getElementById("reset");
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
           alert("data updated");
-          location.replace("https://anjithsaju.github.io/");
+          location.replace("https://vercel.com/anjithsajus-projects/splitapp/6cb41tfnNNeGy5j7fTo2gFJ5pf1L");
         } catch (error) {
           console.error("Error:", error);
         }
