@@ -79,7 +79,7 @@ const button = document.getElementById("reset");
             Anjith: 0,
             Adith: 0,
             Kevin: 0,
-           
+           Richol: 0,
             Anadhakrishnan: 0
           };
 
@@ -88,7 +88,7 @@ const button = document.getElementById("reset");
             Anjith: 0,
             Adith: 0,
             Chriswin: 0,
-           
+           Richol: 0,
             Anadhakrishnan: 0,
           };
           let Anjith = {
@@ -96,7 +96,7 @@ const button = document.getElementById("reset");
             Kevin: 0,
             Adith: 0,
             Chriswin: 0,
-           
+           Richol: 0,
             Anadhakrishnan: 0,
           };
           let Adith = {
@@ -104,16 +104,23 @@ const button = document.getElementById("reset");
             Anjith: 0,
             Kevin: 0,
             Chriswin: 0,
-           
+           Richol: 0,
             Anadhakrishnan: 0,
           };
-         
+         let Richol = {
+            pid: 106,
+            Anjith: 0,
+            Adith: 0,
+            Chriswin: 0,
+            Anadhakrishnan: 0,
+            Kevin: 0,
+          };
           let Anadhakrishnan = {
             pid: 106,
             Anjith: 0,
             Adith: 0,
             Chriswin: 0,
-          
+            Richol: 0,
             Kevin: 0,
           };
           const  expensedetails=
@@ -132,7 +139,7 @@ const button = document.getElementById("reset");
               Anjith: 0,
               Adith: 0,
               Kevin: 0,
-             
+              Richol: 0,
               Anadhakrishnan: 0
           }
           const data1 = {
@@ -140,8 +147,8 @@ const button = document.getElementById("reset");
             Kevin,
             Anjith,
             Anadhakrishnan,
-            Adith
-          
+            Adith,
+            Richol
           };
           const database1={Tally:data1,
             Expenses:expensedetails,
